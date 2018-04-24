@@ -1,0 +1,29 @@
+<div>
+  <h1>Welcome to the Dummy Application</h1>
+  <div class="row">
+    <div class="col-md-7">
+      <img src="../assets/loginpannel.jpeg">
+    </div>
+    <div class="col-md-4">
+      <form #loginForm>
+        <div>
+          <label>Username: </label>
+          <input type="text" name="username" [(ngModel)]="loginModel.userName">
+        </div>
+        <div>
+          <label>Password: </label>
+          <input type="text" name="pwd" [(ngModel)]="loginModel.password">
+        </div>
+        {{array}}
+        <button (click)="getData()">Get users</button>
+          <div *ngFor ="let arr of data">
+            <p>{{arr.id}}</p>
+          </div>
+        <div>
+          <button type="submit" (click)="submit()">Submit</button>
+          <button class="btn btn-default" (click)="resetForm(loginForm)">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
